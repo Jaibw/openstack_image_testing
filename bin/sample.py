@@ -2,7 +2,7 @@ import paramiko
 from os import environ as env
 
 def worker_handler():
-    k = paramiko.RSAKey.from_private_key_file("jai-cloudwatt-fr2.pem")
+    k = paramiko.RSAKey.from_private_key_file(env['TESTING_HOST_KEY'])
     c = paramiko.SSHClient()
     c.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
